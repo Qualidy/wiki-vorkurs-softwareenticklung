@@ -1,0 +1,17 @@
+title: BMI-Rechner als Funktion
+difficulty: 1
+question: |
+  Schreibe eine Funktion `bmi(gewicht, groesse)`, die den Body-Mass-Index berechnet:
+
+  $$\text{BMI} = \frac{\text{Gewicht (kg)}}{\text{Größe (m)}^2}$$
+
+  Frage Gewicht und Größe per `input()` ab, rufe die Funktion auf und gib das Ergebnis aus.
+solution: |
+  ```python
+  def bmi(gewicht, groesse):
+      return gewicht / (groesse ** 2)
+
+  g = float(input("Gewicht (kg): "))
+  h = float(input("Größe (m): "))
+  print(f"Dein BMI: {bmi(g, h):.1f}")
+  ```

@@ -1,0 +1,27 @@
+title: Noten-Bewertung
+difficulty: 2
+question: |
+  Frage eine Note von **0 bis 100** ab und gib mit `if` / `elif` / `else` aus:
+
+  | Punktzahl | Bewertung |
+  |-----------|-----------|
+  | ≥ 90 | A |
+  | ≥ 80 | B |
+  | ≥ 70 | C |
+  | ≥ 60 | D |
+  | sonst | F |
+solution: |
+  ```python
+  note = int(input("Note (0–100): "))
+
+  if note >= 90:
+      print("A")
+  elif note >= 80:
+      print("B")
+  elif note >= 70:
+      print("C")
+  elif note >= 60:
+      print("D")
+  else:
+      print("F")
+  ```

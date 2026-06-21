@@ -1,0 +1,23 @@
+title: Server-Status als Dictionary
+difficulty: 1
+question: |
+  Lege ein Dictionary `server` an mit:
+
+  - `"name"`: `"db-01"`
+  - `"cpu"`: `72`
+  - `"online"`: `True`
+
+  1. Gib Name und CPU aus.
+  2. Setze `"cpu"` auf `65`.
+  3. Füge `"ram"` mit Wert `80` hinzu.
+solution: |
+  ```python
+  server = {"name": "db-01", "cpu": 72, "online": True}
+
+  print(server["name"], server["cpu"])
+
+  server["cpu"] = 65
+  server["ram"] = 80
+
+  print(server)
+  ```

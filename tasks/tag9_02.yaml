@@ -1,0 +1,25 @@
+title: Log-Auswertung
+difficulty: 2
+question: |
+  Erstelle eine Test-`server.log` mit mindestens 5 Zeilen, darunter 2× `ERROR` und 1× `WARN`.
+
+  Schreibe ein Skript, das zählt:
+
+  - Anzahl Zeilen mit `ERROR`
+  - Anzahl Zeilen mit `WARN`
+
+  Gib eine kurze Zusammenfassung aus.
+solution: |
+  ```python
+  fehler = 0
+  warnungen = 0
+
+  with open("server.log", "r", encoding="utf-8") as log:
+      for zeile in log:
+          if "ERROR" in zeile:
+              fehler += 1
+          elif "WARN" in zeile:
+              warnungen += 1
+
+  print(f"Zusammenfassung: {fehler} Fehler, {warnungen} Warnungen")
+  ```

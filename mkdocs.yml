@@ -1,24 +1,37 @@
-site_name: Basis Wiki
+site_name: "Vorkurs Programmierung"
 
 nav:
   - Übersicht: index.md
-  - Topic 1: content/1.md
-
+  - "Kapitel 1 – Einführung in Python": content/kapitel1.md
+  - "Kapitel 2 – Python-Setup & Arbeitsumgebung": content/kapitel2.md
+  - "Kapitel 3 – Strings & Text verarbeiten": content/kapitel3.md
+  - "Kapitel 4 – Datentypen, Variablen & Ein-/Ausgabe": content/kapitel4.md
+  - "Kapitel 5 – Kontrollstrukturen": content/kapitel5.md
+  - "Kapitel 6 – Schleifen & Listen": content/kapitel6.md
+  - "Kapitel 7 – Funktionen & Module": content/kapitel7.md
+  - "Kapitel 8 – Dateien, CSV & JSON": content/kapitel8.md
+  - "Kapitel 9 – Mini-Automationen": content/kapitel9.md
+  - "Kapitel 10 – Dictionaries & Datenstrukturen": content/kapitel10.md
 
 theme:
   name: material
   palette:
-    # primary: blue
-    # accent: green
-    primary: amber
-    accent: deep orange
+    scheme: default
+    primary: black
+    accent: orange
   logo: assets/logo.png
   favicon: assets/favicon.png
+  font:
+    text: DM Sans
+    code: JetBrains Mono
   features:
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.tracking
     - navigation.path
     - navigation.top
     - navigation.footer
+    - navigation.prune
     - toc.follow
     - toc.integrate
     - content.code.copy
@@ -38,37 +51,35 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - admonition
   - attr_list
   - md_in_html
+  - tables
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.highlight:
       linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
 
 extra_css:
-  - stylesheets/logo.css
+  - stylesheets/theme.css
   - stylesheets/grid.css
+  - stylesheets/logo.css
   - stylesheets/video_admonition.css
-  - stylesheets/python_tutor_admonition.css
   - stylesheets/mermaid.css
 
 extra_javascript:
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
-  
+
 plugins:
-    - search
-    - macros
+  - search
+  - macros
 
 extra:
   social:
-    - icon: fontawesome/solid/k
-      link: https://www.kununu.com/de/qualidy
     - icon: fontawesome/brands/linkedin
       link: https://de.linkedin.com/company/qualidy
-    - icon: material/google
-      link: https://www.google.com/search?sca_esv=7e6ba2047fcb60f3&uds=AMwkrPtyB8MsmozA4Lwzqy2G2HCu-abqzc6moOG48q3gP5dtjTRzC2Ws0eSwcyLXDfZNuYCrZ7ByIreHLG9th3vKLekPoVeey0tumAbet4cVLQRLzdRFhUbOGbnyp3xo1V0hzzaNmkCN&si=AKbGX_rcuucMgom2rba1cdwsvM2SVoIkP2btyqGMV4t0GuHIs4sGV_1tpuqR0YHG4Rzd9SdJcL-lW6E-2aJA5azZLTKkIOrZ2j2aWwoBkVbdEJ0o0GPcQhs%3D&q=Qualidy+GmbH+Rezensionen&sa=X&ved=2ahUKEwibsbnSgcmFAxXNQvEDHaVYCiAQ3PALegQIRxAF
     - icon: fontawesome/solid/globe
       link: https://qualidy.de
 

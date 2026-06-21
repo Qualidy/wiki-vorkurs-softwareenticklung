@@ -1,0 +1,18 @@
+title: Volljährig oder nicht?
+difficulty: 1
+question: |
+  Schreibe ein Programm, das nach dem Alter fragt und ausgibt:
+
+  - „Du bist volljährig." wenn `alter >= 18`
+  - „Du bist minderjährig." sonst
+
+  Nutze `if` / `else`.
+solution: |
+  ```python
+  alter = int(input("Wie alt bist du? "))
+
+  if alter >= 18:
+      print("Du bist volljährig.")
+  else:
+      print("Du bist minderjährig.")
+  ```

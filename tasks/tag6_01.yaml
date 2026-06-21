@@ -1,0 +1,24 @@
+title: Größte Zahl finden
+difficulty: 1
+question: |
+  Gegeben: `zahlen = [4, 8, 1, 9, 3]`
+
+  Finde die **größte** Zahl mit einer `for`-Schleife und `if` – **ohne** `max()`.
+
+  Gib das Ergebnis aus.
+
+  Extra: Finde auch die kleinste Zahl.
+solution: |
+  ```python
+  zahlen = [4, 8, 1, 9, 3]
+  groesste = zahlen[0]
+  kleinste = zahlen[0]
+
+  for zahl in zahlen:
+      if zahl > groesste:
+          groesste = zahl
+      if zahl < kleinste:
+          kleinste = zahl
+
+  print(f"Max: {groesste}, Min: {kleinste}")
+  ```

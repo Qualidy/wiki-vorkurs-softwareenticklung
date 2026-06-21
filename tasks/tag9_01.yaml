@@ -1,0 +1,26 @@
+title: Dateien zählen
+difficulty: 1
+question: |
+  Schreibe ein Skript, das im **aktuellen Ordner** zählt:
+
+  - Wie viele **Dateien** (keine Ordner) es gibt
+  - Wie viele davon auf `.py` enden
+
+  Nutze `os.listdir()` und `os.path.isfile()`.
+tip: |
+  Teste in einem Ordner mit ein paar `.py`- und `.txt`-Dateien.
+solution: |
+  ```python
+  import os
+
+  alle = 0
+  py_dateien = 0
+
+  for name in os.listdir("."):
+      if os.path.isfile(name):
+          alle += 1
+          if name.endswith(".py"):
+              py_dateien += 1
+
+  print(f"Dateien gesamt: {alle}, Python-Dateien: {py_dateien}")
+  ```

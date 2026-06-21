@@ -1,0 +1,18 @@
+title: pip und requirements.txt
+difficulty: 3
+question: |
+  1. Aktiviere deine venv und installiere ein Paket deiner Wahl (z. B. `pip install requests`).
+
+  2. Erzeuge eine `requirements.txt` mit `pip freeze > requirements.txt`.
+
+  3. Erkläre in 2–3 Sätzen: Warum nutzt man im Team eine `requirements.txt`?
+
+  4. Bonus: Was passiert, wenn du `pip install -r requirements.txt` auf einem neuen Rechner ausführst?
+tip: |
+  Die Datei dokumentiert exakt, welche Paketversionen installiert wurden – wichtig, wenn mehrere Personen am selben Projekt arbeiten.
+solution: |
+  1.–2. Paket installiert, requirements.txt enthält Zeilen wie `requests==2.x.x`.
+
+  3. Alle im Projekt nutzen dieselben Paketversionen – Setup ist reproduzierbar und dokumentiert.
+
+  4. Alle in requirements.txt gelisteten Pakete werden in der aktiven venv installiert.

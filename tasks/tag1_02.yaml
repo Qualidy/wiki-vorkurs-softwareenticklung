@@ -1,0 +1,18 @@
+title: Python vs. C einordnen
+difficulty: 2
+question: |
+  Beantworte die Fragen:
+
+  1. Ein Studierender schreibt ein Python-Skript zur Datenauswertung. Warum ist Python hier oft die bessere Wahl als C – nenne **zwei** Gründe.
+
+  2. Ein Entwickler programmiert Firmware für einen Mikrocontroller mit 64 KB RAM. Warum würde man hier eher C als Python nutzen?
+
+  3. Nenne **einen Vorteil** und **einen Nachteil** von Python gegenüber kompilierten Sprachen.
+tip: |
+  Denke an Lesbarkeit, Entwicklungsgeschwindigkeit, Speicher, Geschwindigkeit und Hardwarenähe.
+solution: |
+  1. Python: schneller zu schreiben und zu lesen; viele Bibliotheken für Datenanalyse (pandas etc.); kein Kompilierungsschritt nötig.
+
+  2. C: sehr speichereffizient und schnell; direkte Hardware-Kontrolle – Python wäre zu langsam und speicherhungrig für 64 KB.
+
+  3. Vorteil: einsteigerfreundlich, schnelle Entwicklung. Nachteil: langsamer in der Ausführung, höherer Speicherverbrauch.

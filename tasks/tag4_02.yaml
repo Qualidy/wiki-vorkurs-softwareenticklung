@@ -1,0 +1,16 @@
+title: Temperatur-Umrechnung
+difficulty: 2
+question: |
+  Schreibe ein Programm, das:
+
+  1. Eine Temperatur in **Celsius** als Variable speichert (z. B. 25)
+  2. Sie in **Fahrenheit** umrechnet: $F = °C \times 9/5 + 32$
+  3. Das Ergebnis formatiert ausgibt
+
+  Bonus: Lass den Celsius-Wert per `input()` eingeben.
+solution: |
+  ```python
+  celsius = float(input("Temperatur in °C: "))
+  fahrenheit = celsius * 9 / 5 + 32
+  print(f"{celsius}°C = {fahrenheit:.1f}°F")
+  ```

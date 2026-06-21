@@ -1,0 +1,30 @@
+title: JSON-Konfiguration
+difficulty: 3
+question: |
+  1. Lege `kurs.json` an mit: Kursname, Anzahl Tage (5), Sprache (`"Python"`).
+
+  2. Lies die Datei ein und gib alle Werte aus.
+
+  3. Füge ein neues Feld `"dozent"` hinzu und speichere als `kurs_aktualisiert.json` (mit `indent=2`).
+solution: |
+  ```python
+  import json
+
+  config = {
+      "kursname": "Vorkurs Programmierung",
+      "tage": 5,
+      "sprache": "Python"
+  }
+
+  with open("kurs.json", "w", encoding="utf-8") as f:
+      json.dump(config, f, indent=2, ensure_ascii=False)
+
+  with open("kurs.json", "r", encoding="utf-8") as f:
+      config = json.load(f)
+      for key, value in config.items():
+          print(f"{key}: {value}")
+
+  config["dozent"] = "Qualidy"
+  with open("kurs_aktualisiert.json", "w", encoding="utf-8") as f:
+      json.dump(config, f, indent=2, ensure_ascii=False)
+  ```

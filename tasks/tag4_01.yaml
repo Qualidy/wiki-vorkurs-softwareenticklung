@@ -1,0 +1,16 @@
+title: Variablen anlegen
+difficulty: 1
+question: |
+  Schreibe ein Python-Programm, das:
+
+  1. Variablen für deinen **Namen** (String), dein **Alter** (int) und deine **Körpergröße** (float) anlegt
+  2. Alle drei Werte mit **einem** f-String ausgibt
+
+  Beispiel-Ausgabe: `Anna, 22 Jahre, 1.68 m`
+solution: |
+  ```python
+  name = "Anna"
+  alter = 22
+  groesse = 1.68
+  print(f"{name}, {alter} Jahre, {groesse} m")
+  ```

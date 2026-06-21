@@ -1,0 +1,15 @@
+title: E-Mail-Adresse bereinigen
+difficulty: 1
+question: |
+  Ein Benutzer gibt `"  ANNA@Example.COM  "` ein.
+
+  1. Schreibe Code, der die Eingabe mit `strip()` und `lower()` bereinigt.
+  2. Gib das Ergebnis mit einem f-String aus.
+
+  **Erwartete Ausgabe:** `anna@example.com`
+solution: |
+  ```python
+  raw = "  ANNA@Example.COM  "
+  email = raw.strip().lower()
+  print(f"Gespeichert: {email}")
+  ```

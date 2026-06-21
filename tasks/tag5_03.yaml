@@ -1,0 +1,25 @@
+title: Geheime Nachricht
+difficulty: 3
+question: |
+  Frage **Name**, **Alter** und **Lieblingszahl** ab.
+
+  Gib nur dann die Nachricht „Zugang gewährt!" aus, wenn **alle** Bedingungen erfüllt sind:
+
+  - Name = `Tina`
+  - Alter > 18
+  - Lieblingszahl = 7
+
+  Sonst: „Zugang verweigert."
+
+  Nutze logische Operatoren (`and`).
+solution: |
+  ```python
+  name = input("Name: ")
+  alter = int(input("Alter: "))
+  zahl = int(input("Lieblingszahl: "))
+
+  if name == "Tina" and alter > 18 and zahl == 7:
+      print("Zugang gewährt!")
+  else:
+      print("Zugang verweigert.")
+  ```

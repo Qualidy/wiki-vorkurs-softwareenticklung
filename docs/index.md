@@ -4,41 +4,74 @@ hide:
   - toc
 ---
 
-
-
-<div class="grid" markdown style="grid-template-columns: repeat(2, minmax(0, 1fr));">
-
-<div markdown>
-
-# Basis Wiki
-
-<div class="grid cards fancy grid--cols-1" markdown >
-- [:material-call-split: **Topic 1**](content/1.md)
-- [:material-call-split: **Topic 1**](content/1.md)
-- [:material-call-split: **Topic 1**](content/1.md)
-- [:material-call-split: **Topic 1**](content/1.md)
+<div class="course-hero">
+  <span class="course-badge">Vorkurs · Python-Programmierung</span>
+  <h1 class="course-title">Vorkurs Programmierung</h1>
+  <p class="course-desc">Python in fünf Tagen – aufbauend auf dem ersten Kursteil. Wir frischen die Grundlagen kompakt auf und gehen in die Tiefe bei den neuen Themen: Module &amp; Import, Datei- und Datenverarbeitung (CSV/JSON) und kleine Automationen für den Alltag.</p>
 </div>
 
-</div>
+<h2 class="course-week-title">Kapitelübersicht</h2>
 
-<div style="margin-left: 15px" markdown>
+<div class="chapter-grid">
 
-![](assets/logo.png)
+<a class="day-card" href="content/kapitel1/">
+  <span class="day-label">Tag 1 · Kapitel 1 · Auffrischung</span>
+  <strong class="day-title">Einführung in Python</strong>
+  <span class="day-topics">Einordnung · Praxisbezug · Python vs. C · Einsatzgebiete</span>
+</a>
 
-Hier können weitere Inhalte rein.
+<a class="day-card" href="content/kapitel2/">
+  <span class="day-label">Tag 1 · Kapitel 2 · Auffrischung</span>
+  <strong class="day-title">Python-Setup & Arbeitsumgebung</strong>
+  <span class="day-topics">Interpreter · VS Code · venv · pip · Hello World</span>
+</a>
 
-{{ link("externer Link", "https://google.com") }}
+<a class="day-card" href="content/kapitel3/">
+  <span class="day-label">Tag 2 · Kapitel 3</span>
+  <strong class="day-title">Strings & Text verarbeiten</strong>
+  <span class="day-topics">split · join · strip · Slicing · formatieren</span>
+</a>
 
-{{ youtube_video("https://www.youtube.com/embed/chPCpYNJe_Q?si=frU_Z_VwSGnPWEPF") }}
+<a class="day-card" href="content/kapitel4/">
+  <span class="day-label">Tag 2 · Kapitel 4 · Auffrischung</span>
+  <strong class="day-title">Datentypen, Variablen & Ein-/Ausgabe</strong>
+  <span class="day-topics">str · int · float · print · input · f-Strings</span>
+</a>
 
-!!! tip "Schneller Navigieren"
+<a class="day-card" href="content/kapitel5/">
+  <span class="day-label">Tag 3 · Kapitel 5 · Auffrischung</span>
+  <strong class="day-title">Kontrollstrukturen</strong>
+  <span class="day-topics">if · elif · else · Vergleiche · and · or · not</span>
+</a>
 
-    ++p++ oder ++comma++ : Zur vorherigen Seite gehen (**P**revious)
+<a class="day-card" href="content/kapitel6/">
+  <span class="day-label">Tag 3 · Kapitel 6 · Auffrischung</span>
+  <strong class="day-title">Schleifen & Listen</strong>
+  <span class="day-topics">for · while · range · Listen · Iteration</span>
+</a>
 
-    ++n++ oder ++period++ : Zur nächsten Seite gehen (**N**ext)
-    
-</div>
-[Subscribe to our newsletter](#){ .md-button }
+<a class="day-card" href="content/kapitel7/">
+  <span class="day-label">Tag 4 · Kapitel 7 · Neu: Module</span>
+  <strong class="day-title">Funktionen & Module</strong>
+  <span class="day-topics">def · return · import · Module · Standardbibliothek</span>
+</a>
 
-[Subscribe to our newsletter](#){ .md-button .md-button--primary }
+<a class="day-card" href="content/kapitel8/">
+  <span class="day-label">Tag 4 · Kapitel 8 · Neu</span>
+  <strong class="day-title">Dateien, CSV & JSON</strong>
+  <span class="day-topics">open · with · Lesen/Schreiben · csv · json</span>
+</a>
+
+<a class="day-card" href="content/kapitel9/">
+  <span class="day-label">Tag 5 · Kapitel 9 · Neu</span>
+  <strong class="day-title">Mini-Automationen</strong>
+  <span class="day-topics">Dateiablage · Datenaufbereitung · Auswertungen</span>
+</a>
+
+<a class="day-card" href="content/kapitel10/">
+  <span class="day-label">Tag 5 · Kapitel 10</span>
+  <strong class="day-title">Dictionaries & Datenstrukturen</strong>
+  <span class="day-topics">dict · get · items · Sets · Kursabschluss</span>
+</a>
+
 </div>

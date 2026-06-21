@@ -1,0 +1,20 @@
+title: Setup-Checkliste
+difficulty: 1
+question: |
+  Führe auf deinem Rechner aus und notiere die Ausgabe:
+
+  1. `python --version` (oder `python3 --version`)
+  2. Lege im Projektordner eine `venv` an: `python -m venv venv`
+  3. Aktiviere die venv und führe `pip list` aus
+
+  Hake ab: [ ] Python installiert  [ ] venv angelegt  [ ] venv aktiviert (Prompt zeigt `(venv)`)
+tip: |
+  Unter Windows PowerShell ggf. Ausführungsrichtlinie für Activate.ps1 beachten. Im Zweifel VS Code Terminal neu öffnen.
+solution: |
+  Beispiel-Ausgaben:
+
+  ```
+  Python 3.12.x
+  ```
+
+  Nach Aktivierung zeigt der Prompt `(venv)`. `pip list` listet installierte Pakete (mindestens pip, setuptools).

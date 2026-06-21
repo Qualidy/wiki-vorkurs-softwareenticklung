@@ -1,0 +1,32 @@
+title: Logzeile filtern
+difficulty: 3
+question: |
+  Gegeben sind drei Logzeilen:
+
+  ```python
+  logs = [
+      "2026-06-22 INFO: Backup gestartet",
+      "2026-06-22 ERROR: Verbindung fehlgeschlagen",
+      "2026-06-22 WARN: Speicher fast voll"
+  ]
+  ```
+
+  Schreibe eine Schleife, die **nur** Zeilen mit `"ERROR"` ausgibt.
+
+  Optional: Zähle mit, wie viele Fehler gefunden wurden.
+solution: |
+  ```python
+  logs = [
+      "2026-06-22 INFO: Backup gestartet",
+      "2026-06-22 ERROR: Verbindung fehlgeschlagen",
+      "2026-06-22 WARN: Speicher fast voll"
+  ]
+
+  fehler = 0
+  for zeile in logs:
+      if "ERROR" in zeile:
+          print(zeile)
+          fehler += 1
+
+  print(f"Anzahl Fehler: {fehler}")
+  ```

@@ -1,0 +1,23 @@
+title: Hello World erweitern
+difficulty: 2
+question: |
+  Erstelle `demo.py` mit folgendem Inhalt und passe ihn an:
+
+  ```python
+  print("Hello, World!")
+  ```
+
+  Erweitere das Skript so, dass es zusätzlich ausgibt:
+
+  - Deinen Namen
+  - Die Python-Version (Tipp: `import sys` → `sys.version`)
+
+  Starte das Skript mit `python demo.py` und kopiere die Ausgabe in deine Antwort.
+solution: |
+  ```python
+  import sys
+
+  print("Hello, World!")
+  print("Ich bin Max Mustermann.")
+  print("Python-Version:", sys.version)
+  ```

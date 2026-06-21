@@ -1,0 +1,16 @@
+title: Textdatei schreiben und lesen
+difficulty: 1
+question: |
+  1. Schreibe ein Skript, das in `notizen.txt` drei Zeilen Text speichert (Modus `"w"`).
+  2. Lies die Datei wieder ein und gib jede Zeile nummeriert aus (`1: ...`, `2: ...`).
+solution: |
+  ```python
+  with open("notizen.txt", "w", encoding="utf-8") as f:
+      f.write("Erste Zeile\n")
+      f.write("Zweite Zeile\n")
+      f.write("Dritte Zeile\n")
+
+  with open("notizen.txt", "r", encoding="utf-8") as f:
+      for nr, zeile in enumerate(f, start=1):
+          print(f"{nr}: {zeile.strip()}")
+  ```

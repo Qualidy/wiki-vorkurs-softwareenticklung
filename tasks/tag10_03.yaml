@@ -1,0 +1,23 @@
+title: Duplikate aus einer Liste entfernen
+difficulty: 3
+question: |
+  Gegeben:
+
+  ```python
+  benutzer = ["anna", "bob", "anna", "tina", "bob", "anna"]
+  ```
+
+  1. Erzeuge mit einem **Set** eine Liste **eindeutiger** Benutzernamen (Reihenfolge egal).
+  2. Gib die Anzahl der eindeutigen Namen aus.
+
+  Optional: Sortiere das Set alphabetisch mit `sorted(...)`.
+solution: |
+  ```python
+  benutzer = ["anna", "bob", "anna", "tina", "bob", "anna"]
+
+  eindeutig = set(benutzer)
+  print(eindeutig)           # Reihenfolge kann variieren
+  print(len(eindeutig))       # 3
+
+  print(sorted(eindeutig))   # ['anna', 'bob', 'tina']
+  ```

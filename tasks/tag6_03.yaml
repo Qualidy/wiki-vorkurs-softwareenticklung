@@ -1,0 +1,29 @@
+title: Einkaufsliste mit Preisen
+difficulty: 3
+question: |
+  Erstelle zwei Listen:
+
+  - `produkte = ["Apfel", "Brot", "Milch"]`
+  - `preise = [0.50, 2.49, 1.19]`
+
+  Gib alle Produkte mit Preis aus und berechne die Gesamtsumme.
+
+  Extra: Welches Produkt ist am teuersten? (mit Schleife, ohne `max()`)
+solution: |
+  ```python
+  produkte = ["Apfel", "Brot", "Milch"]
+  preise = [0.50, 2.49, 1.19]
+  summe = 0
+  teuerstes = produkte[0]
+  max_preis = preise[0]
+
+  for i in range(len(produkte)):
+      print(f"{produkte[i]}: {preise[i]:.2f} €")
+      summe += preise[i]
+      if preise[i] > max_preis:
+          max_preis = preise[i]
+          teuerstes = produkte[i]
+
+  print(f"Summe: {summe:.2f} €")
+  print(f"Teuerstes: {teuerstes}")
+  ```

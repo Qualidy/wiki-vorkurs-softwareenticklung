@@ -1,0 +1,24 @@
+title: Countdown rekursiv
+difficulty: 3
+question: |
+  Schreibe eine rekursive Funktion `countdown(n)`:
+
+  - Gibt die Zahlen von `n` bis 1 aus
+  - Bei `n == 0` gib `"Fertig!"` aus und stoppe (Basis-Fall)
+
+  Rufe `countdown(4)` auf.
+
+  Erkläre in einem Satz, warum ein Basis-Fall nötig ist.
+solution: |
+  ```python
+  def countdown(n):
+      if n == 0:
+          print("Fertig!")
+          return
+      print(n)
+      countdown(n - 1)
+
+  countdown(4)
+  ```
+
+  Ohne Basis-Fall würde die Funktion sich unendlich selbst aufrufen → RecursionError.

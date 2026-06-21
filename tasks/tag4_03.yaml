@@ -1,0 +1,20 @@
+title: Einkaufszettel
+difficulty: 3
+question: |
+  Speichere **3 Produkte** und ihre **Preise** in Variablen (oder zwei Listen).
+
+  Gib jedes Produkt mit Preis aus und berechne die **Gesamtsumme**.
+
+  Bonus: Frage die Preise per `input()` ab und wandle sie mit `float()` um.
+solution: |
+  ```python
+  produkte = ["Milch", "Brot", "Käse"]
+  preise = [1.19, 2.49, 3.99]
+
+  summe = 0
+  for i in range(len(produkte)):
+      print(f"{produkte[i]}: {preise[i]:.2f} €")
+      summe += preise[i]
+
+  print(f"Gesamt: {summe:.2f} €")
+  ```

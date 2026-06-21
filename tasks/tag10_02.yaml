@@ -1,0 +1,32 @@
+title: Umsatz pro Produkt summieren
+difficulty: 2
+question: |
+  Summiere Verkäufe in einem Dictionary – ohne fertige `sum()`-Hilfe auf die Werte-Liste:
+
+  ```python
+  verkaeufe = [
+      ("Apfel", 2.50),
+      ("Birne", 1.80),
+      ("Apfel", 3.00),
+      ("Kiwi", 4.20),
+  ]
+  ```
+
+  Ergebnis: `{"Apfel": 5.50, "Birne": 1.80, "Kiwi": 4.20}`
+
+  Nutze `.get(produkt, 0)` beim Aufsummieren.
+solution: |
+  ```python
+  verkaeufe = [
+      ("Apfel", 2.50),
+      ("Birne", 1.80),
+      ("Apfel", 3.00),
+      ("Kiwi", 4.20),
+  ]
+
+  umsatz = {}
+  for produkt, betrag in verkaeufe:
+      umsatz[produkt] = umsatz.get(produkt, 0) + betrag
+
+  print(umsatz)
+  ```

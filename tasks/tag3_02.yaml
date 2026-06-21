@@ -1,0 +1,21 @@
+title: CSV-Zeile zerlegen
+difficulty: 2
+question: |
+  Gegeben ist die Zeile:
+
+  `"Anna;2;Informatik"`
+
+  1. Zerlege sie mit `split(";")` in eine Liste.
+  2. Gib Name, Note und Fach einzeln aus (mit f-String oder Index).
+  3. Setze die Teile mit `" | "` wieder zusammen (`join`).
+solution: |
+  ```python
+  zeile = "Anna;2;Informatik"
+  teile = zeile.split(";")
+
+  print(f"Name: {teile[0]}")
+  print(f"Note: {teile[1]}")
+  print(f"Fach: {teile[2]}")
+
+  print(" | ".join(teile))   # Anna | 2 | Informatik
+  ```

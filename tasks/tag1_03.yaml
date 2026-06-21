@@ -1,0 +1,24 @@
+title: Kursplan und Erwartungen
+difficulty: 3
+question: |
+  Der Vorkurs dauert 5 Tage mit je 2 Kapiteln.
+
+  1. Erstelle eine kurze Tabelle: **Tag → Kapitel → Hauptthema** (5 Zeilen).
+
+  2. Was brauchst du laut Wiki für den Kurs (mindestens 4 Punkte)?
+
+  3. Formuliere **ein persönliches Lernziel** für dich nach dem Vorkurs (2–3 Sätze) – z. B. „Ich möchte … können."
+solution: |
+  Beispiel-Tabelle:
+
+  | Tag | Kapitel | Thema |
+  |-----|---------|-------|
+  | 1 | 1–2 | Einführung & Setup |
+  | 2 | 3–4 | Mathe-Grundlagen & Datentypen |
+  | 3 | 5–6 | Bedingungen & Schleifen |
+  | 4 | 7–8 | Funktionen & Dateien |
+  | 5 | 9–10 | Automationen & Mathe |
+
+  Ausstattung: Laptop, Code-Editor, Python, Neugier.
+
+  Lernziel: individuell – z. B. kleine Skripte schreiben, Dateien auswerten, Programmierlogik verstehen.

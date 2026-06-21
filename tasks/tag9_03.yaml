@@ -1,0 +1,20 @@
+title: Mini-Automatisierung planen
+difficulty: 3
+question: |
+  Wähle **eine** Automatisierungs-Idee:
+
+  - A) CSV mit Verkaufsdaten → Gesamtumsatz pro Produkt
+  - B) Dateien in Unterordner nach Endung sortieren
+  - C) Tägliche Text-Notiz an eine bestehende Datei anhängen
+
+  1. Beschreibe Input, Verarbeitung und Output (Stichpunkte).
+  2. Liste die Python-Bausteine, die du brauchst (`open`, `csv`, `for`, …).
+  3. Optional: Implementiere eine vereinfachte Version (ca. 15–25 Zeilen Code).
+solution: |
+  Bewertung nach Vollständigkeit des Plans und korrekter Wahl der Bausteine.
+
+  Beispiel A: Input = CSV, Verarbeitung = DictReader + Summe, Output = Konsolen-Report oder neue CSV.
+
+  Beispiel B: `os.listdir`, `os.path.splitext`, `shutil.move`, `os.makedirs`.
+
+  Beispiel C: `open(..., "a")`, `datetime.now()` für Zeitstempel.

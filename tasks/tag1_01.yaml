@@ -1,0 +1,20 @@
+title: Python-Einsatzgebiete zuordnen
+difficulty: 1
+question: |
+  Ordne die folgenden Anwendungsfälle dem passenden Python-Einsatzgebiet zu:
+
+  1. Ein Data-Team wertet Verkaufszahlen aus und erstellt Diagramme.
+  2. Ein Startup baut die API für seine Web-App.
+  3. Ein Admin sortiert täglich Logdateien in Ordner.
+  4. Ein Forschungsteam trainiert ein Bilderkennungsmodell.
+
+  Wähle jeweils aus: **Webentwicklung**, **Datenanalyse/KI**, **Automatisierung/Skripte** oder **Wissenschaft**.
+
+  Begründe jede Zuordnung in einem Satz.
+tip: |
+  Python ist vielseitig – manche Fälle passen zu mehreren Bereichen. Wähle den **dominanten** Einsatz.
+solution: |
+  1. **Datenanalyse/KI** – Auswertung und Visualisierung von Daten.
+  2. **Webentwicklung** – Backend/API mit Frameworks wie Django oder Flask.
+  3. **Automatisierung/Skripte** – wiederkehrende Datei-Aufgaben ohne GUI.
+  4. **Datenanalyse/KI** – Machine Learning und Modelltraining.

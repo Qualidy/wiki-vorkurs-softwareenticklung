@@ -1,0 +1,27 @@
+title: Noten-Durchschnitt
+difficulty: 2
+question: |
+  ```python
+  noten = [2, 3, 1, 4, 2]
+  ```
+
+  Berechne den **Durchschnitt** mit einer Schleife – **ohne** `sum()` oder `len()` für die Summe (Länge darf für Durchschnitt genutzt werden).
+
+  Extra: Gib beste und schlechteste Note aus.
+solution: |
+  ```python
+  noten = [2, 3, 1, 4, 2]
+  summe = 0
+  beste = noten[0]
+  schlechteste = noten[0]
+
+  for note in noten:
+      summe += note
+      if note < beste:
+          beste = note
+      if note > schlechteste:
+          schlechteste = note
+
+  print(f"Durchschnitt: {summe / len(noten)}")
+  print(f"Beste: {beste}, Schlechteste: {schlechteste}")
+  ```
