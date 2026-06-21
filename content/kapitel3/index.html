@@ -1,0 +1,1295 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../kapitel2/">
+      
+      
+        <link rel="next" href="../kapitel4/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>Kapitel 3 – Strings & Text verarbeiten - Vorkurs Programmierung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"DM Sans";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/theme.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kapitel-3-strings-text-verarbeiten" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Vorkurs Programmierung" class="md-header__button md-logo" aria-label="Vorkurs Programmierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Vorkurs Programmierung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kapitel 3 – Strings & Text verarbeiten
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Übersicht
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kapitel1/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kapitel 1 – Einführung in Python
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kapitel2/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kapitel 2 – Python-Setup & Arbeitsumgebung
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kapitel 3 – Strings & Text verarbeiten
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kapitel4/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kapitel 4 – Datentypen, Variablen & Ein-/Ausgabe
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kapitel5/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kapitel 5 – Kontrollstrukturen
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kapitel6/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kapitel 6 – Schleifen & Listen
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kapitel7/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kapitel 7 – Funktionen & Module
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kapitel8/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kapitel 8 – Dateien, CSV & JSON
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kapitel9/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kapitel 9 – Mini-Automationen
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../kapitel10/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kapitel 10 – Dictionaries & Datenstrukturen
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Vorkurs Programmierung" class="md-nav__button md-logo" aria-label="Vorkurs Programmierung" data-md-component="logo">
+      
+  <img src="../../assets/logo.png" alt="logo">
+
+    </a>
+    Vorkurs Programmierung
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übersicht
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 1 – Einführung in Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 2 – Python-Setup & Arbeitsumgebung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 3 – Strings & Text verarbeiten
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 3 – Strings & Text verarbeiten
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#was-du-in-diesem-kapitel-lernst" class="md-nav__link">
+    <span class="md-ellipsis">
+      Was du in diesem Kapitel lernst
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#so-gehst-du-vor" class="md-nav__link">
+    <span class="md-ellipsis">
+      So gehst du vor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-was-ist-ein-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Was ist ein String?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-lange-und-einzelne-zeichen" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Länge und einzelne Zeichen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-slicing-teile-herausschneiden" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Slicing – Teile herausschneiden
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-string-methoden-text-bearbeiten" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 String-Methoden – Text bearbeiten
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 String-Methoden – Text bearbeiten">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#text-zerlegen-und-wieder-zusammensetzen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Text zerlegen und wieder zusammensetzen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-prufen-ob-text-vorkommt" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Prüfen, ob Text vorkommt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-text-schon-formatieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Text schön formatieren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-kleines-beispiel-eingabe-bereinigen" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.7 Kleines Beispiel: Eingabe bereinigen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kurzubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kurzübungen
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 4 – Datentypen, Variablen & Ein-/Ausgabe
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 5 – Kontrollstrukturen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 6 – Schleifen & Listen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 7 – Funktionen & Module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 8 – Dateien, CSV & JSON
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 9 – Mini-Automationen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kapitel10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kapitel 10 – Dictionaries & Datenstrukturen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kapitel-3-strings-text-verarbeiten">Kapitel 3 – Strings &amp; Text verarbeiten<a class="headerlink" href="#kapitel-3-strings-text-verarbeiten" title="Permanent link">&para;</a></h1>
+<div class="kurs-progress">
+  <div class="step done"></div>
+  <div class="step done"></div>
+  <div class="step active"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+<div class="lernziele">
+<h3 id="was-du-in-diesem-kapitel-lernst">Was du in diesem Kapitel lernst<a class="headerlink" href="#was-du-in-diesem-kapitel-lernst" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Texte (Strings) gezielt auslesen, kürzen und zusammensetzen</li>
+<li>Häufige String-Methoden wie <code>split()</code>, <code>strip()</code> und <code>replace()</code> nutzen</li>
+<li>Mit Slicing einzelne Teile eines Textes herausnehmen</li>
+<li>Texte für Ausgabe und einfache Datenaufbereitung formatieren</li>
+</ul>
+</div>
+<hr />
+<div class="anknuepfung">
+<p><span class="ank-label">Wiederholung &amp; Anknüpfung</span>
+<strong>Das kennst du schon</strong> aus dem ersten Kursteil: Strings in Anführungszeichen, <code>print()</code> und einfache f-Strings.</p>
+<p><strong>Neu / hier wichtig:</strong> Text <strong>bearbeiten</strong> statt nur ausgeben – genau das brauchst du später bei Logdateien, CSV-Zeilen und Automationen.</p>
+</div>
+<h2 id="so-gehst-du-vor">So gehst du vor<a class="headerlink" href="#so-gehst-du-vor" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Tippe jedes Beispiel ab und probiere kleine Variationen aus.</li>
+<li>Achte darauf, ob eine Methode den <strong>Original-Text verändert</strong> oder einen <strong>neuen</strong> Text zurückgibt.</li>
+<li>Bearbeite die <strong>Kurzübungen</strong>.</li>
+</ol>
+<hr />
+<h2 id="31-was-ist-ein-string">3.1 Was ist ein String?<a class="headerlink" href="#31-was-ist-ein-string" title="Permanent link">&para;</a></h2>
+<p>Ein <strong>String</strong> (<code>str</code>) ist eine Zeichenkette – also Text. In Python steht er in <code>"..."</code> oder <code>'...'</code>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Anna&quot;</span>
+<span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;anna@example.com&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>Strings sind in der Praxis überall: Benutzereingaben, Dateiinhalte, CSV-Zeilen, Fehlermeldungen, Konfigurationen.</p>
+<hr />
+<h2 id="32-lange-und-einzelne-zeichen">3.2 Länge und einzelne Zeichen<a class="headerlink" href="#32-lange-und-einzelne-zeichen" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>    <span class="c1"># 6</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>      <span class="c1"># P  (erstes Zeichen, Index 0)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>     <span class="c1"># n  (letztes Zeichen)</span>
+</code></pre></div></td></tr></table></div>
+<p>Wie bei Listen beginnt der Index bei <strong>0</strong>. Negative Indizes zählen vom Ende.</p>
+<hr />
+<h2 id="33-slicing-teile-herausschneiden">3.3 Slicing – Teile herausschneiden<a class="headerlink" href="#33-slicing-teile-herausschneiden" title="Permanent link">&para;</a></h2>
+<p>Mit <strong>Slicing</strong> nimmst du einen Ausschnitt aus einem Text:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;anna@example.com&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">email</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>    <span class="c1"># anna</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">email</span><span class="p">[</span><span class="mi">5</span><span class="p">:])</span>     <span class="c1"># example.com  (ab Index 5 bis Ende)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">email</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:])</span>    <span class="c1"># com</span>
+</code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th>Ausdruck</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text[a:b]</code></td>
+<td>von Index <code>a</code> bis <strong>vor</strong> <code>b</code></td>
+</tr>
+<tr>
+<td><code>text[a:]</code></td>
+<td>ab Index <code>a</code> bis Ende</td>
+</tr>
+<tr>
+<td><code>text[:b]</code></td>
+<td>vom Anfang bis <strong>vor</strong> <code>b</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Praxis: Domain aus E-Mail extrahieren</p>
+<p><code>email.split("@")[1]</code> ist oft einfacher als Slicing – dazu gleich mehr.</p>
+</div>
+<hr />
+<h2 id="34-string-methoden-text-bearbeiten">3.4 String-Methoden – Text bearbeiten<a class="headerlink" href="#34-string-methoden-text-bearbeiten" title="Permanent link">&para;</a></h2>
+<p>Strings haben <strong>Methoden</strong> – Funktionen, die du mit einem Punkt am String aufrufst:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;  Hallo Welt  &quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>        <span class="c1"># &quot;Hallo Welt&quot;  (Leerzeichen weg)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>        <span class="c1"># &quot;  hallo welt  &quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>        <span class="c1"># &quot;  HALLO WELT  &quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;Welt&quot;</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">))</span>  <span class="c1"># &quot;  Hallo Python  &quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>Wichtig: Methoden wie <code>strip()</code> oder <code>lower()</code> erzeugen einen <strong>neuen</strong> String. Der Original-Text in <code>text</code> bleibt unverändert, solange du ihn nicht neu zuweist:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>   <span class="c1"># jetzt ist text bereinigt</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="text-zerlegen-und-wieder-zusammensetzen">Text zerlegen und wieder zusammensetzen<a class="headerlink" href="#text-zerlegen-und-wieder-zusammensetzen" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">zeile</span> <span class="o">=</span> <span class="s2">&quot;Anna;2;Informatik&quot;</span>
+<span class="n">teile</span> <span class="o">=</span> <span class="n">zeile</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">teile</span><span class="p">)</span>   <span class="c1"># [&#39;Anna&#39;, &#39;2&#39;, &#39;Informatik&#39;]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">teile</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>   <span class="c1"># Anna</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">teile</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>   <span class="c1"># 2</span>
+
+<span class="n">wieder</span> <span class="o">=</span> <span class="s2">&quot;-&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">teile</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wieder</span><span class="p">)</span>   <span class="c1"># Anna-2-Informatik</span>
+</code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th>Methode</th>
+<th>Wofür?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>split("...")</code></td>
+<td>Text an einem Trennzeichen <strong>zerlegen</strong> → Liste</td>
+</tr>
+<tr>
+<td><code>join(liste)</code></td>
+<td>Liste-Elemente mit Trennzeichen <strong>verbinden</strong> → String</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">IT-Bezug</p>
+<p>Eine CSV-Zeile wie <code>Anna,2,Informatik</code> ist im Kern ein String mit Trennzeichen. Später nutzt du dafür das <code>csv</code>-Modul (Kapitel 8) – das Prinzip ist aber dasselbe.</p>
+</div>
+<hr />
+<h2 id="35-prufen-ob-text-vorkommt">3.5 Prüfen, ob Text vorkommt<a class="headerlink" href="#35-prufen-ob-text-vorkommt" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">log</span> <span class="o">=</span> <span class="s2">&quot;2026-06-22 ERROR: Verbindung fehlgeschlagen&quot;</span>
+
+<span class="k">if</span> <span class="s2">&quot;ERROR&quot;</span> <span class="ow">in</span> <span class="n">log</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fehler gefunden!&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p><code>in</code> prüft, ob ein Teilstring vorkommt – sehr nützlich bei Logdateien und einfachen Filtern.</p>
+<hr />
+<h2 id="36-text-schon-formatieren">3.6 Text schön formatieren<a class="headerlink" href="#36-text-schon-formatieren" title="Permanent link">&para;</a></h2>
+<p>f-Strings kannst du <strong>formatieren</strong>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">preis</span> <span class="o">=</span> <span class="mf">19.5</span>
+<span class="n">menge</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Summe: </span><span class="si">{</span><span class="n">preis</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">menge</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> €&quot;</span><span class="p">)</span>   <span class="c1"># Summe: 58.50 €</span>
+</code></pre></div></td></tr></table></div>
+<p><code>:.2f</code> bedeutet: Kommazahl mit <strong>2 Nachkommastellen</strong>.</p>
+<p>Weitere nützliche Varianten:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;anna&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hallo, </span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>   <span class="c1"># Hallo, Anna!</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;Produkt&#39;</span><span class="si">:</span><span class="s2">&lt;12</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39;Preis&#39;</span><span class="si">:</span><span class="s2">&gt;8</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;Apfel&#39;</span><span class="si">:</span><span class="s2">&lt;12</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="mf">1.20</span><span class="si">:</span><span class="s2">&gt;8.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h2 id="37-kleines-beispiel-eingabe-bereinigen">3.7 Kleines Beispiel: Eingabe bereinigen<a class="headerlink" href="#37-kleines-beispiel-eingabe-bereinigen" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">raw</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;E-Mail eingeben: &quot;</span><span class="p">)</span>
+<span class="n">email</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="s2">&quot;@&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">email</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Das sieht nicht wie eine E-Mail aus.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gespeichert: </span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Hier kombinierst du <strong>Methoden-Kette</strong> (<code>strip().lower()</code>) mit einer <strong>Prüfung</strong> (<code>in</code> / <code>not in</code>).</p>
+<details class="info">
+<summary>Optional: Kennst du schon PHP?</summary>
+<p>Nur relevant, wenn du <strong>PHP schon kennst</strong> – sonst einfach überspringen.</p>
+<table>
+<thead>
+<tr>
+<th>Python</th>
+<th>PHP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text.strip()</code></td>
+<td><code>trim($text)</code></td>
+</tr>
+<tr>
+<td><code>text.lower()</code></td>
+<td><code>strtolower($text)</code></td>
+</tr>
+<tr>
+<td><code>text.split(";")</code></td>
+<td><code>explode(";", $text)</code></td>
+</tr>
+<tr>
+<td><code>"-".join(liste)</code></td>
+<td><code>implode("-", $liste)</code></td>
+</tr>
+</tbody>
+</table>
+<p>In Python steht der String <strong>vor</strong> dem Punkt: <code>email.strip()</code>, nicht <code>$email-&gt;strip()</code>.</p>
+</details>
+<hr />
+<h2 id="kurzubungen">Kurzübungen<a class="headerlink" href="#kurzubungen" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary><span class="task-level task-level--1">Grundlagen</span> E-Mail-Adresse bereinigen</summary>
+<p>Ein Benutzer gibt <code>"  ANNA@Example.COM  "</code> ein.</p>
+<ol>
+<li>Schreibe Code, der die Eingabe mit <code>strip()</code> und <code>lower()</code> bereinigt.</li>
+<li>Gib das Ergebnis mit einem f-String aus.</li>
+</ol>
+<p><strong>Erwartete Ausgabe:</strong> <code>anna@example.com</code></p>
+<details class="success">
+<summary>Lösung</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">raw</span> <span class="o">=</span> <span class="s2">&quot;  ANNA@Example.COM  &quot;</span>
+<span class="n">email</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gespeichert: </span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--2">Fortgeschritten</span> CSV-Zeile zerlegen</summary>
+<p>Gegeben ist die Zeile:</p>
+<p><code>"Anna;2;Informatik"</code></p>
+<ol>
+<li>Zerlege sie mit <code>split(";")</code> in eine Liste.</li>
+<li>Gib Name, Note und Fach einzeln aus (mit f-String oder Index).</li>
+<li>Setze die Teile mit <code>" | "</code> wieder zusammen (<code>join</code>).</li>
+</ol>
+<details class="success">
+<summary>Lösung</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">zeile</span> <span class="o">=</span> <span class="s2">&quot;Anna;2;Informatik&quot;</span>
+<span class="n">teile</span> <span class="o">=</span> <span class="n">zeile</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Name: </span><span class="si">{</span><span class="n">teile</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Note: </span><span class="si">{</span><span class="n">teile</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fach: </span><span class="si">{</span><span class="n">teile</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; | &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">teile</span><span class="p">))</span>   <span class="c1"># Anna | 2 | Informatik</span>
+</code></pre></div></td></tr></table></div>
+</details>
+</details>
+<details class="question">
+<summary><span class="task-level task-level--3">Experte</span> Logzeile filtern</summary>
+<p>Gegeben sind drei Logzeilen:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">logs</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;2026-06-22 INFO: Backup gestartet&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2026-06-22 ERROR: Verbindung fehlgeschlagen&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2026-06-22 WARN: Speicher fast voll&quot;</span>
+<span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+<p>Schreibe eine Schleife, die <strong>nur</strong> Zeilen mit <code>"ERROR"</code> ausgibt.</p>
+<p>Optional: Zähle mit, wie viele Fehler gefunden wurden.</p>
+<details class="success">
+<summary>Lösung</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">logs</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;2026-06-22 INFO: Backup gestartet&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2026-06-22 ERROR: Verbindung fehlgeschlagen&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2026-06-22 WARN: Speicher fast voll&quot;</span>
+<span class="p">]</span>
+
+<span class="n">fehler</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">zeile</span> <span class="ow">in</span> <span class="n">logs</span><span class="p">:</span>
+    <span class="k">if</span> <span class="s2">&quot;ERROR&quot;</span> <span class="ow">in</span> <span class="n">zeile</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">zeile</span><span class="p">)</span>
+        <span class="n">fehler</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Anzahl Fehler: </span><span class="si">{</span><span class="n">fehler</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../kapitel2/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Kapitel 2 – Python-Setup &amp; Arbeitsumgebung">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 2 – Python-Setup & Arbeitsumgebung
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../kapitel4/" class="md-footer__link md-footer__link--next" aria-label="Next: Kapitel 4 – Datentypen, Variablen &amp; Ein-/Ausgabe">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Kapitel 4 – Datentypen, Variablen & Ein-/Ausgabe
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M351.9 280H161c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zm-191-48h190.9c-2.8-64.5-17.1-123.9-37.4-167.4-11.4-24.4-23.7-41.8-35.1-52.4C268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4m-48 0c3.5-85.6 25.6-165.1 57.9-217.3C78.7 47.3 10.9 131.2 1.5 232zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3zm111.4-48C501.9 131.2 434.1 47.3 342 14.7c32.3 52.2 54.4 131.7 57.9 217.3z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "navigation.prune", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
